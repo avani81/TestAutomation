@@ -35,15 +35,17 @@ tests (apis, ui)
 2. Download project repository and run pip install requirements.txt ( This will install project dependancies like selenium , nosetests and other required modules )
 3. From project directory copy geckodriver(for Firefox) and chromedriver in path /usr/local/bin to run locally
 ### To run API tests
-1. Add your api_key in file tests/api/movies_latests_tests.py line #14 for self.api_key = ‘Your_api_key’
+1. Add your api_key in config file - tests/config/automation_configs.ini Line # 5 
+example - [Keys]
+api_key = #ADD_API_KEY_HERE
 2. From command line run - nosetests -v tests/api/movies_latests_tests.py
 ### To run UI tests
-1. Specify local browser - Firefox or Chrome in tests/ui/base_ui_test.py( default Firefox)
+1. Specify local browser in tests/config/automation_configs.ini - Firefox or Chrome ( default Firefox)
 2. From command line run - nosetests -v tests/ui/test_product_cart_flows.py
 
 ### Limitation and more improvements
-- Remove hardcoding of api_key from setup to pass as parameterize . Better approach would be generate token or session in test setup and discard in tearDown method after running tests.
-- base_ui_test.py can be improvise to removing hardcoding of browser or running test on headless browser example phantomjs.
+- API tests for more complex flows can be added which include more than one objects like Movies , Authentication , TvShows etc 
+- base_ui_test.py can be improvise to running test on headless browser example phantomjs.
 - more logging can be added with printStep(), printDebug(), printError().
 - more exception handling can be added.
 - more test coverage can be added. Included some in test defination in files for future implemenations
