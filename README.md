@@ -44,8 +44,10 @@ api_key = #ADD_API_KEY_HERE
 2. From command line run - nosetests -v tests/ui/test_product_cart_flows.py
 
 ### Limitation and more improvements
-- API tests for more complex flows can be added which include more than one objects like Movies , Authentication , TvShows etc 
+- API tests for more complex flows can be added which include more than one objects like Movies , Authentication , TvShows etc
 - base_ui_test.py can be improvise to running test on headless browser example phantomjs.
 - more logging can be added with printStep(), printDebug(), printError().
 - more exception handling can be added.
 - more test coverage can be added. Included some in test defination in files for future implemenations
+- UI test locators are hardcoded ( can be updated with better css selectors) 
+- UI test locators can be part of page object files 
